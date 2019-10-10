@@ -52,6 +52,14 @@ public class ShortUrlController {
 	private RestBody<ShortUrl> longUrlEmpty = new RestBody<ShortUrl>("-1", "需要转链的网址不能为空", null);
 	private RestBody<ShortUrl> isNotUrl = new RestBody<ShortUrl>("-1", "需要转链的网址格式不正确", null);
 	
+	 /**
+     * 用于将长连接转短连接
+     * @title 长连接转短连接
+	 * @param appId|用户的appId|String|必填
+	 * @param longUrl|用户的长连接|String|必填
+	 * @param duration|保存时间|int|选填
+	 * @return
+	 */
 	@RequestMapping(value = "/stol/api", method = RequestMethod.GET)
 	@ResponseBody
 	public RestBody<ShortUrl> defaultLogin(String appId, String longUrl,Integer duration) {

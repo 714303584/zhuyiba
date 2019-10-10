@@ -28,6 +28,14 @@
 			<scope>system</scope>
 			<systemPath>${project.basedir}/src/main/resources/libs/jdoc-1.1.jar</systemPath>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-lang3</artifactId>
+		    <version>3.9</version>
+		</dependency>
+				
 	
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
