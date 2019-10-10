@@ -6,7 +6,7 @@ angular.module('index_app', [])
     
     this.long2short = function(){
     	$http({
-    	    method: 'GET',
+    	    method: 'POST',
     	    url: '/stol/api',
     	params: { 
     		longUrl: this.longUrl

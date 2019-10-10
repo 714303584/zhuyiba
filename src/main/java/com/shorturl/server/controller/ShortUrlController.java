@@ -29,8 +29,11 @@ import com.shorturl.server.service.ShortCallLogService;
 import com.shorturl.server.service.ShortUrlService;
 import com.shorturl.util.InviteCodeDigest;
 
+/**
+ * 短连接服务
+ */
 @Controller
-public class ShortUrlController {
+public class ShortUrlController extends PublicController {
 
 	@Value("${project.domain}")
 	public String Domain;
@@ -58,9 +61,8 @@ public class ShortUrlController {
 	 * @param appId|用户的appId|String|必填
 	 * @param longUrl|用户的长连接|String|必填
 	 * @param duration|保存时间|int|选填
-	 * @return
 	 */
-	@RequestMapping(value = "/stol/api", method = RequestMethod.GET)
+	@RequestMapping(value = "/stol/api", method = RequestMethod.POST)
 	@ResponseBody
 	public RestBody<ShortUrl> defaultLogin(String appId, String longUrl,Integer duration) {
 		
@@ -129,48 +131,7 @@ public class ShortUrlController {
     }
     
     
-    /**
-     * 获取Request
-     */
-    public HttpServletRequest getRequest() {
-        ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes)RequestContextHolder.getRequestAttributes();
-        return servletRequestAttributes.getRequest();
-    }
-    
-    public HttpServletResponse getResponse() {
-    	ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes)RequestContextHolder.getRequestAttributes();
-    	return servletRequestAttributes.getResponse();
-    }
-    
-    private String getIpAddr(HttpServletRequest request) {   
-           String ip = request.getHeader("x-forwarded-for");   
-           if(ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {   
-               ip = request.getHeader("Proxy-Client-IP");   
-           }   
-           if(ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {   
-               ip = request.getHeader("WL-Proxy-Client-IP");   
-           }   
-           if(ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {   
-               ip = request.getRemoteAddr();   
-               if(ip.equals("127.0.0.1")){     
-                   //根据网卡取本机配置的IP     
-                   InetAddress inet=null;     
-                   try {     
-                       inet = InetAddress.getLocalHost();     
-                   } catch (Exception e) {     
-                       e.printStackTrace();     
-                   }     
-                   ip= inet.getHostAddress();     
-               }  
-           }   
-           // 多个代理的情况，第一个IP为客户端真实IP,多个IP按照','分割  
-           if(ip != null && ip.length() > 15){    
-               if(ip.indexOf(",")>0){     
-                   ip = ip.substring(0,ip.indexOf(","));     
-               }     
-           }     
-           return ip;   
-    }  
+      
     
     
     

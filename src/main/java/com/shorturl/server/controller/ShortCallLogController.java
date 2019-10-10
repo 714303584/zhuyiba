@@ -19,8 +19,6 @@ import com.shorturl.server.repository.ShortCallLogRepository;
 import com.shorturl.server.service.ShortCallLogService;
 import com.shorturl.util.InviteCodeDigest;
 
-
-
 @Controller
 public class ShortCallLogController {
 	
