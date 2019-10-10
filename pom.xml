@@ -20,6 +20,15 @@
 	</properties>
 
 	<dependencies>
+		
+		<dependency>
+		  	<groupId>com.jdocapi</groupId>
+			<artifactId>jdoc</artifactId>
+			<version>1.1</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/resources/libs/jdoc-1.1.jar</systemPath>
+		</dependency>
+	
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
@@ -80,7 +89,7 @@
 			<scope>test</scope>
 		</dependency>
 	
-		
+
 		
 		
 	</dependencies>
