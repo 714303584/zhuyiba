@@ -18,12 +18,10 @@ public class PublicController {
         return servletRequestAttributes.getRequest();
     }
     
-    
     public HttpServletResponse getResponse() {
     	ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes)RequestContextHolder.getRequestAttributes();
     	return servletRequestAttributes.getResponse();
     }
-    
     
     public  String getIpAddr(HttpServletRequest request) {   
            String ip = request.getHeader("x-forwarded-for");   

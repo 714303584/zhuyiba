@@ -15,10 +15,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-$(document).ready(function(){
-  var client, destination;
 
-  
+angular.module('chat_main_page', [])
+  .controller('chatMainPageController', function($scope, $http) {
+	  this.client;
+	  this.destination;
+	  
+	  
+	  
+	  
+    
+    
+  });
+
+
+
+
+
+
+$(document).ready(function(){
+
   
   var ChatosExamle = {
 			Message : {

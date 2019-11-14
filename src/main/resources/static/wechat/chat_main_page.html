@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- saved from url=(0049)http://www.jq22.com/demo/jqueryweblt201908272313/ -->
-<html lang="en" style="-vh: 1.5px;">
+<html lang="en" style="-vh: 1.5px;"  ng-app="chat_main_page">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -16,9 +16,7 @@
 <link rel="stylesheet"
 	href="./css/soho.min.css">
 </head>
-<body class="" style="">
-
-
+<body class="" style="" ng-controller="chatMainPageController as chatMainPage">
 
 
 	<div class="modal fade" id="disconnected" tabindex="-1" role="dialog"
@@ -1605,10 +1603,7 @@
 		
 	<script
 		src="./js/mqttws31.js"></script>
-		
-	<script
-		src="./js/chat.js"></script>
-		
+	
 	<div id="ascrail2000" class="nicescroll-rails nicescroll-rails-vr"
 		style="width: 4px; z-index: auto; cursor: default; position: absolute; top: 0px; left: -4px; height: 0px; display: none;">
 		<div class="nicescroll-cursors"
@@ -1670,4 +1665,13 @@
 			style="position: absolute; top: 0px; height: 4px; width: 0px; background-color: rgba(66, 66, 66, 0.2); border: 0px; background-clip: padding-box; border-radius: 5px;"></div>
 	</div>
 </body>
+
+
+
+<script src="//cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
+	
+<script
+		src="./js/chat.js"></script>
+		
+
 </html>

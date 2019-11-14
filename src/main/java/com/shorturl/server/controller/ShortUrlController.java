@@ -98,6 +98,10 @@ public class ShortUrlController extends PublicController {
 		}
 	}
 	
+	/**
+	 * 跳转接受
+	 * @param code|短链code--URL参数|String|必填
+	 */
     @RequestMapping("/{code}")
     public String redirectView(@PathVariable("code") String code, HttpServletRequest request){
     	
