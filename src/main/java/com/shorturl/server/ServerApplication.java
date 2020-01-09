@@ -16,7 +16,6 @@ public class ServerApplication {
 		SpringApplication.run(ServerApplication.class, args);
 	}
 	
-	
 	@Bean
 	public JedisConnectionFactory jedisConnectionFactory() {
 	   JedisConnectionFactory jedisConFactory = new JedisConnectionFactory();
@@ -24,16 +23,6 @@ public class ServerApplication {
 	   jedisConFactory.setPort(6379);
 	   jedisConFactory.setUsePool(true);
 	   return jedisConFactory;
-	}
-	@Bean
-	public RedisTemplate<String, Object> redisTemplate() {
-	   RedisTemplate<String, Object> template = new RedisTemplate<>();
-	   template.setConnectionFactory(jedisConnectionFactory());
-	   template.setKeySerializer(new StringRedisSerializer());
-	   template.setHashKeySerializer(new StringRedisSerializer());
-	   template.setHashValueSerializer(new StringRedisSerializer());
-	   template.setValueSerializer(new StringRedisSerializer());
-	   return template;
 	}
 
 }
